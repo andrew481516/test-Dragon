@@ -1,26 +1,33 @@
 Pod::Spec.new do |s|
-  s.name                = 'CoreDataFramework'
-  s.module_name         = 'CoreDataFramework'
-  s.version             = '1.0.0'
-  s.homepage            = 'https://dragonflai.co'
-  s.documentation_url   = 'https://dragonflai-tech.github.io/sdk.dragonflai.co/beta-index.html'
-  s.license             = { :type => 'MIT', :file => 'CoreDataFramework.xcframework/LICENSE' }
-  s.author              = { 'DragonflAI LTD' => 'support@dragonflai.co' }
-  s.summary             = 'On-device Content Moderation.'
+  s.name             = 'CoreDataFramework'
+  s.module_name      = 'CoreDataFramework'
 
-  s.description         = <<-DESC
-                          With on-device content moderation we can help you keep nudity off your platform.
-                          This means less liability for you and safer platforms for your users.
-                          DESC
+  s.version          = '1.0.0'
+  s.summary          = 'CoreDataFramework'
 
-  s.platform            = :ios, '12.0'
-  s.source              = { :http => "https://github.com/andrew481516/test-Dragon/releases/download/1.0.0/CoreDataFramework.xcframework.zip" }
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.swift_version       = '5.0'
-  s.vendored_frameworks = "CoreDataFramework.xcframework"
+  s.description      = <<-DESC
+"CoreDataFramework"
+                       DESC
 
-  s.pod_target_xcconfig       = { 'DEFINES_MODULE' => 'YES' }
+  s.homepage         = 'https://dragonflai.co'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'Kevych' => 'andriy.hrytsyshyn@kevychsolutions.com' }
+  s.source           = { :git => 'https://github.com/andrew481516/test-Dragon', :tag => s.version.to_s }
 
-  s.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.source_files = 'CoreDataFramework/Classes/*.swift'
+  
+  # s.resource_bundles = {
+  #   'SKImageExtension' => ['CoreDataFramework/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
 end
