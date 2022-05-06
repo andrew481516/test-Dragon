@@ -1,0 +1,45 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-tvos15.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CoreDataFramework
+import CoreData
+@_exported import CoreDataFramework
+import Foundation
+import Swift
+import _Concurrency
+@_hasMissingDesignatedInitializers public class CoreDataManager {
+  public static let shared: CoreDataFramework.CoreDataManager
+  public func createMetric(features: [Swift.String], duration: Swift.Double, version: Swift.String, productId: Swift.Int)
+  public func fetch() -> [CoreDataFramework.Metric]
+  public func deleteAllData()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(Metric) public class Metric : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension CoreDataFramework.Metric {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<CoreDataFramework.Metric>
+  @objc @NSManaged dynamic public var calculationTime: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var features: [Swift.String]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var instance: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var timestamp: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var version: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension CoreDataFramework.Metric : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
